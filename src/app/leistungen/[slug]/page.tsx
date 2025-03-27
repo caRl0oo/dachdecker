@@ -5,10 +5,12 @@ import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { services } from '@/lib/services';
 import { notFound } from 'next/navigation';
 
-type PageProps = {
-  params: { slug: string };
+interface PageProps {
+  params: {
+    slug: string;
+  };
   searchParams: { [key: string]: string | string[] | undefined };
-};
+}
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const service = services.find((s) => s.slug === params.slug);
@@ -31,12 +33,8 @@ export async function generateStaticParams() {
   }));
 }
 
-async function getService(slug: string) {
-  return services.find((s) => s.slug === slug);
-}
-
-export default async function Page({ params }: PageProps) {
-  const service = await getService(params.slug);
+export default function Page({ params }: PageProps) {
+  const service = services.find((s) => s.slug === params.slug);
 
   if (!service) {
     notFound();
