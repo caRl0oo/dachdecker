@@ -38,7 +38,7 @@ export default function Page({ params }: { params: { slug: string } }) {
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/hero-roof.jpg"
+            src={service.image}
             alt={service.title}
             fill
             className="object-cover"
