@@ -1,17 +1,31 @@
-import React from 'react';
+import { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { services } from '@/lib/services';
 
-type Props = {
-  params: {
-    slug: string;
-  };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const service = services.find((s) => s.slug === params.slug);
+  
+  if (!service) {
+    return {
+      title: 'Service nicht gefunden',
+    };
+  }
 
-export default async function Page({ params }: Props) {
+  return {
+    title: `${service.title} - Dachdecker Berlin`,
+    description: service.description,
+  };
+}
+
+export async function generateStaticParams() {
+  return services.map((service) => ({
+    slug: service.slug,
+  }));
+}
+
+export default function Page({ params }: { params: { slug: string } }) {
   const service = services.find((s) => s.slug === params.slug);
 
   if (!service) {
@@ -88,10 +102,4 @@ export default async function Page({ params }: Props) {
       </div>
     </div>
   );
-}
-
-export async function generateStaticParams() {
-  return services.map((service) => ({
-    slug: service.slug,
-  }));
 } 
