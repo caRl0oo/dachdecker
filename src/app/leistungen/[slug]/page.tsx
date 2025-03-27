@@ -26,7 +26,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: { params: { slug: string } }) {
   const service = services.find((s) => s.slug === params.slug);
 
   if (!service) {
@@ -34,7 +34,8 @@ export default function Page({ params }: { params: { slug: string } }) {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gray-50">
+      {/* Hero Section */}
       <section className="relative h-[500px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
@@ -56,6 +57,7 @@ export default function Page({ params }: { params: { slug: string } }) {
         </div>
       </section>
 
+      {/* Content Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <Link 
@@ -66,28 +68,53 @@ export default function Page({ params }: { params: { slug: string } }) {
             Zurück zur Startseite
           </Link>
 
+          {/* Service Details */}
           <div className="prose prose-lg max-w-none">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               {service.details.map((detail, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-sm">
-                  <h3 className="text-xl font-semibold mb-4">{detail.title}</h3>
-                  <p>{detail.description}</p>
+                <div key={index} className="bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+                  <h3 className="text-2xl font-semibold mb-4 text-gray-900">{detail.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{detail.description}</p>
                 </div>
               ))}
             </div>
 
-            <div className="bg-primary/5 p-8 rounded-lg">
-              <h2 className="text-2xl font-semibold mb-4">Kontaktieren Sie uns</h2>
-              <p className="mb-6">
-                Haben Sie Fragen zu {service.title}? Kontaktieren Sie uns für eine 
-                unverbindliche Beratung.
+            {/* Contact Section */}
+            <div className="bg-primary/5 p-8 rounded-xl border border-primary/10">
+              <h2 className="text-2xl font-semibold mb-4 text-gray-900">Kontaktieren Sie uns</h2>
+              <p className="mb-6 text-gray-600">
+                Haben Sie Fragen zu unseren {service.title.toLowerCase()}? Kontaktieren Sie uns für eine 
+                unverbindliche Beratung. Wir erstellen Ihnen gerne ein individuelles Angebot.
               </p>
               <Link 
                 href="/#contact" 
-                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90"
+                className="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-200"
               >
-                Kontakt aufnehmen
+                Jetzt Kontakt aufnehmen
               </Link>
+            </div>
+
+            {/* Additional Info */}
+            <div className="mt-12 bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+              <h2 className="text-2xl font-semibold mb-4 text-gray-900">Warum uns wählen?</h2>
+              <ul className="space-y-4 text-gray-600">
+                <li className="flex items-start">
+                  <span className="mr-2">✓</span>
+                  <span>Jahrelange Erfahrung im Bereich {service.title}</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">✓</span>
+                  <span>Qualifizierte Fachkräfte und modernste Ausrüstung</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">✓</span>
+                  <span>Kostenlose Erstberatung und transparente Preisgestaltung</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="mr-2">✓</span>
+                  <span>Garantie auf alle ausgeführten Arbeiten</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
