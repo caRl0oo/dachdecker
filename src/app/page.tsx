@@ -26,17 +26,17 @@ export default function Home() {
         
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white animate-fade-in">
-            Professionelle Dacharbeiten in Berlin
+            Ihr Dachdecker-Meisterbetrieb in Berlin
           </h1>
           <p className="text-xl md:text-2xl text-white/90 mb-8 animate-fade-in-delayed">
-            25 Jahre Erfahrung in Dachsanierung, Dachreparatur und Dachdeckung
+            Von der Reparatur bis zur Komplettsanierung - Wir sind Ihr kompetenter Partner für alle Dacharbeiten
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delayed-2">
             <Link 
               href="/#contact" 
               className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-lg font-medium rounded-full text-primary hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105"
             >
-              Kontakt aufnehmen
+              Kostenlose Beratung
             </Link>
             <Link 
               href="/leistungen" 
@@ -61,21 +61,21 @@ export default function Home() {
           <div className="max-w-4xl mx-auto text-center animate-fade-in">
             <h2 className="text-4xl font-bold mb-8 text-gradient">Ihre Dachdeckerei in Berlin</h2>
             <p className="text-lg text-gray-600 mb-12">
-              Vor über 35 Jahren in Berlin gegründet, sind wir Ihr zuverlässiger Partner für sämtliche Dachdeckeraufgaben. 
-              Mit unserem kompetenten Team übernehmen wir Dachdeckerarbeiten, sowie Zimmerei- und Klempneraufgaben für Sie.
+              Als Meisterbetrieb stehen wir für höchste Qualität und Zuverlässigkeit bei allen Dacharbeiten.
+              Mit modernster Technik und traditionellem Handwerk realisieren wir Ihre Projekte professionell und termingerecht.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="card-modern hover-scale">
-                <div className="text-4xl font-bold text-gradient mb-2">35+</div>
-                <div className="text-gray-600">Jahre Erfahrung</div>
+                <div className="text-4xl font-bold text-gradient mb-2">24/7</div>
+                <div className="text-gray-600">Notdienst verfügbar</div>
               </div>
               <div className="card-modern hover-scale">
-                <div className="text-4xl font-bold text-gradient mb-2">1000+</div>
-                <div className="text-gray-600">Zufriedene Kunden</div>
+                <div className="text-4xl font-bold text-gradient mb-2">100%</div>
+                <div className="text-gray-600">Qualitätsgarantie</div>
               </div>
               <div className="card-modern hover-scale">
-                <div className="text-4xl font-bold text-gradient mb-2">8</div>
-                <div className="text-gray-600">Experten im Team</div>
+                <div className="text-4xl font-bold text-gradient mb-2">10</div>
+                <div className="text-gray-600">Jahre Gewährleistung</div>
               </div>
             </div>
           </div>
