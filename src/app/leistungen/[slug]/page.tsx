@@ -3,8 +3,15 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowLeftIcon } from '@heroicons/react/24/outline';
 import { services } from '@/lib/services';
+import { notFound } from 'next/navigation';
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const service = services.find((s) => s.slug === params.slug);
   
   if (!service) {
@@ -25,22 +32,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const service = services.find((s) => s.slug === params.slug);
+async function getService(slug: string) {
+  return services.find((s) => s.slug === slug);
+}
+
+export default async function Page({ params }: PageProps) {
+  const service = await getService(params.slug);
 
   if (!service) {
-    return (
-      <div className="min-h-screen py-20">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold mb-4">Leistung nicht gefunden</h1>
-            <Link href="/" className="text-primary hover:text-primary/80">
-              Zurück zur Startseite
-            </Link>
-          </div>
-        </div>
-      </div>
-    );
+    notFound();
   }
 
   return (
