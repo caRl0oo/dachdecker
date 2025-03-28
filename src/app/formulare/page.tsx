@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { ArrowRightIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, LockClosedIcon } from '@heroicons/react/24/outline';
+import { siteConfig } from '@/lib/config';
 
 export const metadata: Metadata = {
   title: 'Formulare | Dachdecker Template',
@@ -8,6 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function FormsPage() {
+  const premiumEnabled = siteConfig.premium?.enabled;
+  const appointmentBookingEnabled = premiumEnabled && siteConfig.premium?.features?.appointmentBooking;
+
   return (
     <main className="pt-24 pb-16">
       <div className="container mx-auto px-4">
@@ -18,7 +22,7 @@ export default function FormsPage() {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-16">
           <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
             <div className="bg-primary/10 p-8">
               <h2 className="text-2xl font-bold mb-2 text-primary">Kostenrechner</h2>
@@ -65,6 +69,48 @@ export default function FormsPage() {
                 Zum Anfrage-Formular
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
               </Link>
+            </div>
+          </div>
+          
+          <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-105 duration-300">
+            <div className="bg-primary/10 p-8 relative">
+              <div className="absolute top-3 right-3 bg-primary text-white text-xs font-bold py-1 px-2 rounded-full">
+                Premium
+              </div>
+              <h2 className="text-2xl font-bold mb-2 text-primary">Terminbuchung</h2>
+              <p className="text-gray-600">
+                Mit unserem Terminbuchungssystem können Kunden direkt online Beratungstermine vereinbaren und Ihren Kalender einsehen.
+              </p>
+            </div>
+            <div className="p-8">
+              <ul className="list-disc pl-5 space-y-2 mb-8 text-gray-700">
+                <li>Kalender-Integration mit freien Terminen</li>
+                <li>Automatische Bestätigungsmails</li>
+                <li>SMS-Erinnerungen vor dem Termin</li>
+                <li>Synchronisation mit Ihrem Firmenkalender</li>
+              </ul>
+              {appointmentBookingEnabled ? (
+                <Link 
+                  href="/formulare/terminbuchung" 
+                  className="inline-flex items-center text-primary hover:text-primary-dark font-medium transition-colors"
+                >
+                  Zur Terminbuchung
+                  <ArrowRightIcon className="w-4 h-4 ml-2" />
+                </Link>
+              ) : (
+                <div className="flex flex-col space-y-2">
+                  <span className="flex items-center text-gray-500">
+                    <LockClosedIcon className="h-4 w-4 mr-2" />
+                    Premium-Feature nicht aktiviert
+                  </span>
+                  <Link 
+                    href={siteConfig.premium?.purchaseInfo?.checkoutUrl || "/premium"}
+                    className="text-sm px-4 py-2 bg-primary/10 text-primary rounded-md hover:bg-primary/20 transition-colors inline-flex items-center justify-center mt-2"
+                  >
+                    Premium-Paket erwerben
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </div>

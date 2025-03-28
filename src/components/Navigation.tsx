@@ -16,7 +16,8 @@ import {
   ClockIcon,
   MapPinIcon,
   ChevronRightIcon,
-  ClipboardDocumentIcon
+  ClipboardDocumentIcon,
+  SparklesIcon
 } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
 import { siteConfig } from '@/lib/config'
@@ -63,6 +64,16 @@ const menuItems = [
     subItems: [
       { name: 'Kostenrechner', href: '/formulare/kostenrechner', description: 'Berechnen Sie Ihre Dachkosten' },
       { name: 'Anfrage-Formular', href: '/formulare/anfrage', description: 'Detailliertes Anfrageformular' },
+    ]
+  },
+  {
+    name: 'Premium', 
+    href: '/premium',
+    icon: SparklesIcon,
+    description: 'Entdecken Sie unsere Premium-Features',
+    subItems: [
+      { name: 'Terminbuchung', href: '/formulare/terminbuchung', description: 'Online-Terminbuchung für Kunden' },
+      { name: 'Alle Premium-Features', href: '/premium', description: 'Übersicht aller Premium-Funktionen' },
     ]
   },
   { 
@@ -118,22 +129,22 @@ export default function Navigation() {
 
             {/* Desktop Menu */}
             <div className="hidden lg:flex flex-1 items-center justify-end">
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center">
                 {menuItems.map((item) => (
                   <div 
                     key={item.name}
-                    className="relative group"
+                    className="relative group mx-1"
                     onMouseEnter={() => item.subItems && setActiveCategory(item.name)}
                     onMouseLeave={() => setActiveCategory(null)}
                   >
                     <Link
                       href={item.href}
-                      className="flex items-center py-2 px-2 text-gray-700 hover:text-primary transition-colors duration-200 text-sm"
+                      className="flex items-center py-2 px-1.5 text-gray-700 hover:text-primary transition-colors duration-200 text-sm whitespace-nowrap"
                     >
-                      <item.icon className="w-4 h-4 mr-1" />
+                      <item.icon className="w-3.5 h-3.5 mr-0.5" />
                       {item.name}
                       {item.subItems && (
-                        <ChevronRightIcon className="w-3 h-3 ml-1 group-hover:rotate-90 transition-transform duration-200" />
+                        <ChevronRightIcon className="w-3 h-3 ml-0.5 group-hover:rotate-90 transition-transform duration-200" />
                       )}
                     </Link>
                     
@@ -146,9 +157,9 @@ export default function Navigation() {
               {/* Call Button */}
               <a
                 href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
-                className="ml-4 inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap"
+                className="ml-2 inline-flex items-center px-2 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap"
               >
-                <PhoneIcon className="w-3.5 h-3.5 mr-1.5" />
+                <PhoneIcon className="w-3 h-3 mr-1" />
                 {contactInfo.phone}
               </a>
             </div>

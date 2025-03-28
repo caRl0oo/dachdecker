@@ -19,9 +19,9 @@ export default function Home() {
           <SparklesIcon className="w-5 h-5 mr-2" />
           <span className="text-sm font-medium">
             Template in der <span className="font-bold">Standard-Version</span> - 
-            <a href="#premium" className="underline ml-1 font-bold hover:text-white/90 transition-colors">
+            <Link href="/premium" className="underline ml-1 font-bold hover:text-white/90 transition-colors">
               Premium-Version mit mehr Features entdecken
-            </a>
+            </Link>
           </span>
         </div>
       </div>
@@ -306,9 +306,12 @@ export default function Home() {
           </div>
 
           <div className="mt-12 text-center">
-            <a href="#" className="inline-block py-3 px-8 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+            <Link 
+              href="/premium" 
+              className="inline-block py-3 px-8 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1"
+            >
               Premium-Version erwerben
-            </a>
+            </Link>
           </div>
         </div>
       </section>

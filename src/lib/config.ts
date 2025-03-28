@@ -133,6 +133,26 @@ export const siteConfig = {
     backToTop: true, // "Zurück nach oben" Button anzeigen
   },
   
+  // Premium Features
+  // ============
+  premium: {
+    enabled: true, // Genereller Schalter für alle Premium-Features
+    features: {
+      appointmentBooking: true, // Terminbuchung
+      fileUpload: true, // Datei-Upload in Formularen
+      roofCalculator3D: false, // 3D-Dachrechner
+      liveChatSupport: false, // Live-Chat Support
+      advancedAnalytics: false, // Erweiterte Statistiken
+    },
+    // Optionale Konfiguration für Kaufprozess
+    purchaseInfo: {
+      priceMonthly: 19.99,
+      priceYearly: 199.99,
+      currency: "EUR",
+      checkoutUrl: "/premium/checkout",
+    }
+  },
+  
   // Sonstige Einstellungen
   // ====================
   analytics: {
