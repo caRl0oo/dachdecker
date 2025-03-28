@@ -18,6 +18,7 @@ import {
   ChevronRightIcon
 } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
+import { siteConfig } from '@/lib/config'
 
 // Erweiterte Menüstruktur mit Unterkategorien
 const menuItems = [
@@ -61,12 +62,12 @@ const menuItems = [
   },
 ]
 
-// Kontaktinformationen für das Mega-Menü
+// Aktualisiere kontaktInfo mit Werten aus der Konfiguration
 const contactInfo = {
-  phone: '+49 123 456 7890',
-  email: 'info@dachdecker-muenchen.de',
-  address: 'Musterstraße 123, 80331 München',
-  hours: 'Mo-Fr: 8:00-17:00 Uhr'
+  phone: siteConfig.contact.phone,
+  email: siteConfig.contact.email,
+  address: siteConfig.contact.address,
+  hours: siteConfig.contact.hours
 }
 
 export default function Navigation() {
@@ -94,10 +95,10 @@ export default function Navigation() {
             <div className="flex-1 flex justify-center lg:justify-start">
               <Link href="/" className="flex items-center">
                 <Image
-                  src="/images/logo-transparent.png"
-                  alt="Dachdecker München"
-                  width={400}
-                  height={120}
+                  src={siteConfig.logo.main}
+                  alt={siteConfig.siteName}
+                  width={siteConfig.logo.width}
+                  height={siteConfig.logo.height}
                   className="w-auto h-28"
                   priority
                 />
