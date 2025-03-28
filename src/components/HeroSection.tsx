@@ -40,19 +40,13 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex justify-center"
         >
           <Link 
             href="/#contact" 
             className="inline-flex items-center justify-center px-8 py-4 border-2 border-primary text-lg font-medium rounded-full text-primary hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105"
           >
             Kostenlose Beratung
-          </Link>
-          <Link 
-            href="/leistungen" 
-            className="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-lg font-medium rounded-full text-white hover:bg-white hover:text-primary transition-all duration-300 transform hover:scale-105"
-          >
-            Unsere Leistungen
           </Link>
         </motion.div>
       </div>

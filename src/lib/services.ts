@@ -16,7 +16,7 @@ export const services: Service[] = [
     title: "Flachdacharbeiten",
     slug: "flachdacharbeiten",
     description: "Professionelle Verlegung und Reparatur von Flachdächern mit modernsten Materialien.",
-    image: "/images/services/flachdach.jpg",
+    image: "/hero-roof.jpg",
     details: [
       {
         title: "Abdichtung",
@@ -32,7 +32,7 @@ export const services: Service[] = [
     title: "Steildacharbeiten",
     slug: "steildacharbeiten",
     description: "Fachgerechte Eindeckung und Sanierung von Steildächern.",
-    image: "/images/services/steildach.jpg",
+    image: "/hero-roof.jpg",
     details: [
       {
         title: "Dacheindeckung",
@@ -48,7 +48,7 @@ export const services: Service[] = [
     title: "Klempnerarbeiten",
     slug: "klempnerarbeiten",
     description: "Montage und Wartung von Dachentwässerungssystemen.",
-    image: "/images/services/klempner.jpg",
+    image: "/hero-roof.jpg",
     details: [
       {
         title: "Dachentwässerung",
@@ -64,7 +64,7 @@ export const services: Service[] = [
     title: "Dachsanierung",
     slug: "dachsanierung",
     description: "Umfassende Sanierung und Modernisierung bestehender Dachkonstruktionen.",
-    image: "/images/services/sanierung.jpg",
+    image: "/hero-roof.jpg",
     details: [
       {
         title: "Komplettsanierung",
@@ -80,7 +80,7 @@ export const services: Service[] = [
     title: "Dachbegrünung",
     slug: "dachbegruenung",
     description: "Professionelle Planung und Ausführung von Gründachprojekten.",
-    image: "/images/services/begruenung.jpg",
+    image: "/hero-roof.jpg",
     details: [
       {
         title: "Extensive Begrünung",
@@ -96,15 +96,15 @@ export const services: Service[] = [
     title: "Notfallservice",
     slug: "notfallservice",
     description: "24/7 Notdienst bei Sturmschäden und Wassereinbrüchen.",
-    image: "/images/services/notfall.jpg",
+    image: "/hero-roof.jpg",
     details: [
       {
-        title: "Schnelle Hilfe",
-        description: "Sofortige Schadensbegrenzung bei akuten Problemen."
+        title: "Sturmschäden",
+        description: "Schnelle Hilfe bei beschädigten Dächern nach Stürmen."
       },
       {
-        title: "Reparatur",
-        description: "Fachgerechte Beseitigung von Sturmschäden und Undichtigkeiten."
+        title: "Wassereinbrüche",
+        description: "Professionelle Behebung von Wasserschäden am Dach."
       }
     ]
   }
