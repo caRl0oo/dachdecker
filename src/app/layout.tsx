@@ -8,8 +8,8 @@ import Footer from '../components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Dachdecker Berlin - Professionelle Dacharbeiten',
-  description: 'Ihr Dachdecker in Berlin mit über 35 Jahren Erfahrung. Professionelle Dacharbeiten, Dachsanierung und Notfallservice.',
+  title: 'Dachdecker München - Professionelle Dacharbeiten',
+  description: 'Ihr Dachdecker in München mit über 35 Jahren Erfahrung. Professionelle Dacharbeiten, Dachsanierung und Notfallservice.',
 };
 
 export default function RootLayout({

@@ -4,8 +4,8 @@ import Link from 'next/link';
 import { services } from '@/lib/services';
 
 export const metadata: Metadata = {
-  title: 'Unsere Leistungen | Dachdecker Berlin',
-  description: 'Entdecken Sie unsere professionellen Dacharbeiten in Berlin. Von Dachsanierung bis Dachbegrünung - wir sind Ihr kompetenter Partner.',
+  title: 'Unsere Leistungen | Dachdecker München',
+  description: 'Entdecken Sie unsere professionellen Dacharbeiten in München. Von Dachsanierung bis Dachbegrünung - wir sind Ihr kompetenter Partner.',
 };
 
 export default function ServicesPage() {
@@ -27,7 +27,7 @@ export default function ServicesPage() {
         
         <div className="relative z-10 text-center px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 text-white">Unsere Leistungen</h1>
-          <p className="text-lg md:text-xl text-white/90">Professionelle Dacharbeiten für Berlin und Umgebung</p>
+          <p className="text-lg md:text-xl text-white/90">Professionelle Dacharbeiten für München und Umgebung</p>
         </div>
       </section>
 

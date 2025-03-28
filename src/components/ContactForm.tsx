@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -35,19 +36,13 @@ export default function ContactForm() {
                 <p className="text-gray-600">030 1234567</p>
               </div>
             </div>
-            <div className="flex items-start">
-              <EnvelopeIcon className="w-6 h-6 text-primary mr-4 mt-1" />
-              <div>
-                <h3 className="font-medium text-gray-900">E-Mail</h3>
-                <p className="text-gray-600">info@dachdecker-berlin.de</p>
-              </div>
+            <div className="flex items-center mb-4">
+              <FaEnvelope className="text-primary mr-3" />
+              <p className="text-gray-600">info@dachdecker-muenchen.de</p>
             </div>
-            <div className="flex items-start">
-              <MapPinIcon className="w-6 h-6 text-primary mr-4 mt-1" />
-              <div>
-                <h3 className="font-medium text-gray-900">Adresse</h3>
-                <p className="text-gray-600">Musterstraße 123<br />10115 Berlin</p>
-              </div>
+            <div className="flex items-start mb-4">
+              <FaMapMarkerAlt className="text-primary mr-3 mt-1" />
+              <p className="text-gray-600">Musterstraße 123<br />80331 München</p>
             </div>
           </div>
         </div>

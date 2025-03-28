@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -33,13 +34,14 @@ export default function Header() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center group">
-            <motion.span 
-              className="text-3xl font-bold text-primary"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              Dachdecker
-            </motion.span>
+            <Image
+              src="/images/logo.svg"
+              alt="Dachdecker München"
+              width={200}
+              height={60}
+              className="w-auto h-10"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

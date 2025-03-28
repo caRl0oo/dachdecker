@@ -9,9 +9,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Logo und Beschreibung */}
           <div>
-            <h3 className="text-xl font-bold mb-4">Dachdecker Berlin</h3>
-            <p className="text-gray-400">
-              Ihr kompetenter Partner für alle Dacharbeiten in Berlin und Umgebung.
+            <h3 className="text-xl font-bold mb-4">Dachdecker München</h3>
+            <p className="text-gray-600 mb-4">
+              Ihr kompetenter Partner für alle Dacharbeiten in München und Umgebung.
             </p>
           </div>
 
@@ -73,7 +73,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Dachdecker Berlin. Alle Rechte vorbehalten.</p>
+          <p>&copy; {new Date().getFullYear()} Dachdecker München. Alle Rechte vorbehalten.</p>
         </div>
       </div>
     </footer>

@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { PhoneIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 const menuItems = [
@@ -19,8 +20,15 @@ export default function Navigation() {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="text-2xl font-bold text-primary">
-            Dachdecker Berlin
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/images/logo.svg"
+              alt="Dachdecker München"
+              width={200}
+              height={60}
+              className="w-auto h-10"
+              priority
+            />
           </Link>
 
           {/* Desktop Menu */}
