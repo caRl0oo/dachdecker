@@ -105,9 +105,14 @@ export default function CostCalculator() {
     <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-md overflow-hidden">
       {!showResult ? (
         <form onSubmit={handleSubmit} className="p-6 md:p-8">
+          <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">Dachkosten berechnen</h2>
+          <p className="text-gray-600 mb-8 text-center">
+            Berechnen Sie die ungefähren Kosten für Ihr Dachprojekt mit unserem interaktiven Rechner.
+          </p>
+          
           <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-lg font-semibold mb-4">1. Dachtyp auswählen</h3>
+            <div className="bg-gray-50 p-5 rounded-lg">
+              <h3 className="text-lg font-semibold mb-4 text-gray-800">1. Dachtyp auswählen</h3>
               <div className="space-y-3">
                 {Object.keys(priceData.roofTypes).map((type) => (
                   <label 
@@ -154,8 +159,8 @@ export default function CostCalculator() {
               </div>
             </div>
 
-            <div>
-              <h3 className="text-lg font-semibold mb-4">2. Material auswählen</h3>
+            <div className="bg-gray-50 p-5 rounded-lg">
+              <h3 className="text-lg font-semibold mb-4 text-gray-800">2. Material auswählen</h3>
               <div className="space-y-3">
                 {Object.keys(priceData.materials).map((mat) => (
                   <label 
@@ -184,44 +189,46 @@ export default function CostCalculator() {
                   </label>
                 ))}
               </div>
-
-              <h3 className="text-lg font-semibold mt-6 mb-4">3. Zusatzleistungen (optional)</h3>
-              <div className="space-y-3">
-                {Object.keys(priceData.additionalServices).map((service) => (
-                  <label 
-                    key={service} 
-                    className={`flex items-center p-3 border rounded-lg cursor-pointer transition-colors ${
-                      additionalServices.includes(service) ? 'border-primary bg-primary/5' : 'border-gray-200 hover:bg-gray-50'
-                    }`}
-                  >
-                    <input
-                      type="checkbox"
-                      name="additionalServices"
-                      value={service}
-                      checked={additionalServices.includes(service)}
-                      onChange={() => handleAdditionalService(service)}
-                      className="hidden"
-                    />
-                    <span className={`w-5 h-5 rounded flex items-center justify-center mr-3 ${
-                      additionalServices.includes(service) 
-                        ? 'bg-primary text-white' 
-                        : 'border border-gray-300'
-                    }`}>
-                      {additionalServices.includes(service) && <CheckIcon className="w-4 h-4" />}
-                    </span>
-                    <span className="text-gray-800">
-                      {priceData.additionalServices[service as keyof typeof priceData.additionalServices].name}
-                    </span>
-                  </label>
-                ))}
-              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 bg-gray-50 p-5 rounded-lg">
+            <h3 className="text-lg font-semibold mb-4 text-gray-800">3. Zusatzleistungen (optional)</h3>
+            <div className="grid md:grid-cols-2 gap-3">
+              {Object.keys(priceData.additionalServices).map((service) => (
+                <label 
+                  key={service} 
+                  className={`flex items-center p-3 border rounded-lg cursor-pointer transition-colors ${
+                    additionalServices.includes(service) ? 'border-primary bg-primary/5' : 'border-gray-200 hover:bg-gray-50'
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    name="additionalServices"
+                    value={service}
+                    checked={additionalServices.includes(service)}
+                    onChange={() => handleAdditionalService(service)}
+                    className="hidden"
+                  />
+                  <span className={`w-5 h-5 rounded flex items-center justify-center mr-3 ${
+                    additionalServices.includes(service) 
+                      ? 'bg-primary text-white' 
+                      : 'border border-gray-300'
+                  }`}>
+                    {additionalServices.includes(service) && <CheckIcon className="w-4 h-4" />}
+                  </span>
+                  <span className="text-gray-800">
+                    {priceData.additionalServices[service as keyof typeof priceData.additionalServices].name}
+                  </span>
+                </label>
+              ))}
             </div>
           </div>
 
           <div className="mt-8 flex justify-center">
             <button
               type="submit"
-              className="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors"
+              className="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors shadow-md"
             >
               Kosten berechnen
             </button>
@@ -230,7 +237,7 @@ export default function CostCalculator() {
       ) : (
         <div className="p-6 md:p-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-2">Kostenübersicht</h3>
+            <h3 className="text-2xl font-bold mb-2 text-gray-800">Kostenübersicht</h3>
             <p className="text-gray-600">
               Basierend auf Ihren Angaben haben wir folgende Kostenübersicht erstellt:
             </p>
@@ -264,14 +271,14 @@ export default function CostCalculator() {
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button
               onClick={resetForm}
-              className="px-6 py-2 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-colors"
+              className="px-6 py-3 border-2 border-primary text-primary font-medium rounded-lg hover:bg-primary hover:text-white transition-colors"
             >
               Neue Berechnung
             </button>
             
             <a
               href="/kontakt"
-              className="px-6 py-2 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors text-center"
+              className="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors text-center shadow-md"
             >
               Unverbindliches Angebot anfordern
             </a>
