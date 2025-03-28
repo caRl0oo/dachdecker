@@ -15,7 +15,8 @@ import {
   EnvelopeIcon,
   ClockIcon,
   MapPinIcon,
-  ChevronRightIcon
+  ChevronRightIcon,
+  ClipboardDocumentIcon
 } from '@heroicons/react/24/outline'
 import { motion, AnimatePresence } from 'framer-motion'
 import { siteConfig } from '@/lib/config'
@@ -52,6 +53,16 @@ const menuItems = [
       { name: 'Dachsanierung', href: '/leistungen/sanierung', description: 'Modernisierung und Reparatur' },
       { name: 'Klempnerarbeiten', href: '/leistungen/klempner', description: 'Fachgerechte Metallarbeiten' },
       { name: 'Notdienst', href: '/leistungen/notfall', description: '24h Notfallservice' },
+    ]
+  },
+  {
+    name: 'Formulare',
+    href: '/formulare',
+    icon: ClipboardDocumentIcon,
+    description: 'Praktische Tools für Ihr Dachprojekt',
+    subItems: [
+      { name: 'Kostenrechner', href: '/formulare/kostenrechner', description: 'Berechnen Sie Ihre Dachkosten' },
+      { name: 'Anfrage-Formular', href: '/formulare/anfrage', description: 'Detailliertes Anfrageformular' },
     ]
   },
   { 
@@ -106,36 +117,38 @@ export default function Navigation() {
             </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex flex-1 items-center justify-end space-x-8">
-              {menuItems.map((item) => (
-                <div 
-                  key={item.name}
-                  className="relative group"
-                  onMouseEnter={() => item.subItems && setActiveCategory(item.name)}
-                  onMouseLeave={() => setActiveCategory(null)}
-                >
-                  <Link
-                    href={item.href}
-                    className="flex items-center py-2 text-gray-700 hover:text-primary transition-colors duration-200"
+            <div className="hidden lg:flex flex-1 items-center justify-end">
+              <div className="flex items-center space-x-4">
+                {menuItems.map((item) => (
+                  <div 
+                    key={item.name}
+                    className="relative group"
+                    onMouseEnter={() => item.subItems && setActiveCategory(item.name)}
+                    onMouseLeave={() => setActiveCategory(null)}
                   >
-                    <item.icon className="w-5 h-5 mr-1.5" />
-                    {item.name}
-                    {item.subItems && (
-                      <ChevronRightIcon className="w-4 h-4 ml-1 group-hover:rotate-90 transition-transform duration-200" />
-                    )}
-                  </Link>
-                  
-                  {/* Underline Animation */}
-                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
-                </div>
-              ))}
+                    <Link
+                      href={item.href}
+                      className="flex items-center py-2 px-2 text-gray-700 hover:text-primary transition-colors duration-200 text-sm"
+                    >
+                      <item.icon className="w-4 h-4 mr-1" />
+                      {item.name}
+                      {item.subItems && (
+                        <ChevronRightIcon className="w-3 h-3 ml-1 group-hover:rotate-90 transition-transform duration-200" />
+                      )}
+                    </Link>
+                    
+                    {/* Underline Animation */}
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left"></span>
+                  </div>
+                ))}
+              </div>
               
               {/* Call Button */}
               <a
                 href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
-                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-200 shadow-md hover:shadow-lg"
+                className="ml-4 inline-flex items-center px-3 py-1.5 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-primary/90 transition-colors duration-200 shadow-md hover:shadow-lg whitespace-nowrap"
               >
-                <PhoneIcon className="w-4 h-4 mr-2" />
+                <PhoneIcon className="w-3.5 h-3.5 mr-1.5" />
                 {contactInfo.phone}
               </a>
             </div>
@@ -240,98 +253,96 @@ export default function Navigation() {
         </AnimatePresence>
       </nav>
 
-      {/* Fullscreen Mobile Menu */}
+      {/* Mobile Menu Expanded */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-40 bg-white lg:hidden pt-20 overflow-y-auto"
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed top-28 left-0 right-0 bg-white z-40 shadow-lg lg:hidden"
           >
-            <div className="container mx-auto px-4 py-8">
-              <div className="space-y-6">
+            <div className="px-4 pt-4 pb-6 space-y-4 divide-y divide-gray-100 max-h-[calc(100vh-7rem)] overflow-y-auto">
+              {/* Main Categories and their SubItems */}
+              <div className="py-3 space-y-3">
                 {menuItems.map((item) => (
-                  <div key={item.name} className="border-b border-gray-100 pb-6">
-                    <div
-                      className="flex items-center justify-between mb-4" 
-                      onClick={() => setActiveCategory(activeCategory === item.name ? null : item.name)}
+                  <div key={item.name} className="space-y-1">
+                    <Link
+                      href={item.href}
+                      className="flex items-center p-3 rounded-lg hover:bg-gray-50 active:bg-gray-100 transition-colors"
+                      onClick={() => setIsOpen(false)}
                     >
-                      <div className="flex items-center text-gray-900">
-                        <item.icon className="w-6 h-6 mr-3 text-primary" />
-                        <span className="text-lg font-medium">{item.name}</span>
+                      <div className="bg-gray-100 rounded-full p-2 mr-3 text-primary">
+                        <item.icon className="w-5 h-5" />
                       </div>
-                      {item.subItems && (
-                        <ChevronRightIcon className={`w-5 h-5 text-gray-500 transition-transform duration-200 ${
-                          activeCategory === item.name ? 'rotate-90' : ''
-                        }`} />
-                      )}
-                    </div>
+                      <div>
+                        <span className="text-sm font-medium text-gray-900 block">{item.name}</span>
+                        <span className="text-xs text-gray-500 truncate block max-w-[180px]">
+                          {item.description}
+                        </span>
+                      </div>
+                    </Link>
                     
-                    <AnimatePresence>
-                      {activeCategory === item.name && item.subItems && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                          className="ml-9 space-y-3"
-                        >
-                          {item.subItems.map((subItem) => (
-                            <Link 
-                              key={subItem.name} 
-                              href={subItem.href}
-                              className="block py-2 text-gray-600 hover:text-primary"
-                              onClick={() => setIsOpen(false)}
-                            >
-                              {subItem.name}
-                            </Link>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                    
-                    {!item.subItems && (
-                      <Link 
-                        href={item.href}
-                        className="block ml-9 text-gray-600 hover:text-primary" 
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.description}
-                      </Link>
+                    {/* SubItems for each category */}
+                    {item.subItems && (
+                      <div className="ml-12 mt-2 space-y-1 border-l-2 border-gray-100 pl-3">
+                        {item.subItems.map((subItem, index) => (
+                          <Link
+                            key={index}
+                            href={subItem.href}
+                            className="flex items-center p-2 rounded-lg hover:bg-gray-50 active:bg-gray-100"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            <span className="text-sm text-gray-700">{subItem.name}</span>
+                          </Link>
+                        ))}
+                      </div>
                     )}
                   </div>
                 ))}
               </div>
-              
-              {/* Mobile Contact Info */}
-              <div className="mt-8 bg-gray-50 rounded-lg p-6">
-                <h3 className="font-semibold text-gray-900 mb-4">Kontakt</h3>
-                <div className="space-y-4">
-                  <a 
-                    href={`tel:${contactInfo.phone.replace(/\s/g, '')}`} 
-                    className="flex items-center text-gray-600 hover:text-primary"
+
+              {/* Contact */}
+              <div className="py-3 space-y-3">
+                <h3 className="text-xs uppercase font-semibold text-gray-500 px-2 py-2">Kontakt</h3>
+                <div className="space-y-2">
+                  <a
+                    href={`tel:${contactInfo.phone.replace(/\s/g, '')}`}
+                    className="flex items-center p-3 hover:bg-gray-50 rounded-lg group"
                   >
-                    <PhoneIcon className="w-5 h-5 mr-3 text-primary" />
-                    <span>{contactInfo.phone}</span>
+                    <PhoneIcon className="w-4 h-4 text-primary mr-3" />
+                    <span className="text-sm text-gray-700 group-hover:text-primary transition-colors">
+                      {contactInfo.phone}
+                    </span>
                   </a>
-                  <a 
-                    href={`mailto:${contactInfo.email}`} 
-                    className="flex items-center text-gray-600 hover:text-primary"
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    className="flex items-center p-3 hover:bg-gray-50 rounded-lg group"
                   >
-                    <EnvelopeIcon className="w-5 h-5 mr-3 text-primary" />
-                    <span>{contactInfo.email}</span>
+                    <EnvelopeIcon className="w-4 h-4 text-primary mr-3" />
+                    <span className="text-sm text-gray-700 group-hover:text-primary transition-colors">
+                      {contactInfo.email}
+                    </span>
                   </a>
-                  <div className="flex items-start text-gray-600">
-                    <MapPinIcon className="w-5 h-5 mr-3 text-primary flex-shrink-0 mt-0.5" />
-                    <span>{contactInfo.address}</span>
-                  </div>
-                  <div className="flex items-center text-gray-600">
-                    <ClockIcon className="w-5 h-5 mr-3 text-primary" />
-                    <span>{contactInfo.hours}</span>
+                  <div className="flex items-start p-3">
+                    <ClockIcon className="w-4 h-4 text-primary mr-3 mt-0.5" />
+                    <span className="text-sm text-gray-700">
+                      {contactInfo.hours}
+                    </span>
                   </div>
                 </div>
+              </div>
+
+              {/* CTA */}
+              <div className="pt-4">
+                <Link
+                  href="/kontakt"
+                  className="block w-full rounded-lg bg-primary text-white text-center py-3 font-medium shadow-sm hover:bg-primary-dark transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Kostenloses Angebot anfordern
+                </Link>
               </div>
             </div>
           </motion.div>

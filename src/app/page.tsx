@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { CheckCircleIcon, PhoneIcon, EnvelopeIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { CheckCircleIcon, PhoneIcon, EnvelopeIcon, MapPinIcon, SparklesIcon } from '@heroicons/react/24/outline';
 import StatsSection from '@/components/StatsSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import CTASection from '@/components/CTASection';
@@ -13,6 +13,19 @@ import { services } from '@/lib/services';
 export default function Home() {
   return (
     <main className="min-h-screen">
+      {/* Premium Banner */}
+      <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white py-2 text-center">
+        <div className="container mx-auto px-4 flex items-center justify-center">
+          <SparklesIcon className="w-5 h-5 mr-2" />
+          <span className="text-sm font-medium">
+            Template in der <span className="font-bold">Standard-Version</span> - 
+            <a href="#premium" className="underline ml-1 font-bold hover:text-white/90 transition-colors">
+              Premium-Version mit mehr Features entdecken
+            </a>
+          </span>
+        </div>
+      </div>
+
       {/* Hero Section mit Parallax */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
@@ -200,6 +213,105 @@ export default function Home() {
           </div>
         </section>
       </AnimatedSection>
+
+      {/* Premium Features Section */}
+      <section id="premium" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary text-sm font-semibold mb-4">Premium-Version</span>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Zusätzliche Premium-Features</h2>
+            <p className="text-lg text-gray-600">
+              Nutzen Sie weitere fortschrittliche Funktionen, die den Wert Ihrer Website deutlich steigern.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Termin-Buchungssystem</h3>
+              <p className="text-gray-600 mb-4">
+                Integriertes Kalendersystem zur Online-Terminvereinbarung mit automatischen Bestätigungen.
+              </p>
+              <span className="text-sm font-medium text-primary">Nur in der Premium-Version</span>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Live-Chat Integration</h3>
+              <p className="text-gray-600 mb-4">
+                Direkter Kundenkontakt über integrierten Chat mit Offline-Nachrichten und Lead-Erfassung.
+              </p>
+              <span className="text-sm font-medium text-primary">Nur in der Premium-Version</span>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Bewertungs-Management</h3>
+              <p className="text-gray-600 mb-4">
+                System zur Sammlung und Verwaltung von Kundenbewertungen mit Einbindung von Google Reviews.
+              </p>
+              <span className="text-sm font-medium text-primary">Nur in der Premium-Version</span>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Online-Bezahlmodul</h3>
+              <p className="text-gray-600 mb-4">
+                Sichere Zahlungsabwicklung für Anzahlungen oder Rechnungen direkt über die Website.
+              </p>
+              <span className="text-sm font-medium text-primary">Nur in der Premium-Version</span>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Erweiterte Analytics</h3>
+              <p className="text-gray-600 mb-4">
+                Detaillierte Benutzerstatistiken und Conversion-Tracking mit Dashboard zur Leistungsüberwachung.
+              </p>
+              <span className="text-sm font-medium text-primary">Nur in der Premium-Version</span>
+            </div>
+
+            <div className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-primary/10 p-3 rounded-full w-14 h-14 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold mb-3">Push-Benachrichtigungen</h3>
+              <p className="text-gray-600 mb-4">
+                Browser-Benachrichtigungen für Aktionen, Sonderangebote und Kundeninteraktionen.
+              </p>
+              <span className="text-sm font-medium text-primary">Nur in der Premium-Version</span>
+            </div>
+          </div>
+
+          <div className="mt-12 text-center">
+            <a href="#" className="inline-block py-3 px-8 bg-primary hover:bg-primary-dark text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+              Premium-Version erwerben
+            </a>
+          </div>
+        </div>
+      </section>
 
       {/* Back to Top Button */}
       <BackToTop />

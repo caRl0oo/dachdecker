@@ -1,31 +1,58 @@
-# Dachdecker Premium Template
+# 🏠 Dachdecker-Template - Moderne Website-Lösung für Handwerksbetriebe
 
-Ein modernes, voll anpassbares Website-Template für Handwerksunternehmen, speziell optimiert für Dachdecker, Zimmereien und verwandte Gewerke.
+![Dachdecker-Template Preview](https://example.com/preview.jpg)
 
-![Dachdecker Preview](./public/preview.jpg)
+## 🚀 Professionelles Website-Template für Dachdecker und Handwerksbetriebe
 
-## Features
+Ein modernes, voll anpassbares Website-Template speziell optimiert für Dachdecker, Zimmerer und verwandte Handwerksbetriebe. Erstellt mit Next.js 14, Tailwind CSS und einem Fokus auf Benutzerfreundlichkeit, Performance und Conversion-Optimierung.
 
-- ⚡️ Gebaut mit Next.js 14 und App Router
-- 🎨 Voll anpassbares Farbschema
-- 📱 Responsive Design für alle Geräte
-- 🔍 SEO-Optimierung
-- 🌐 Modernes Mega-Menü
-- 💼 Spezialisierte Branchen-Komponenten
-- 🔧 Einfache Konfiguration über zentrale Config-Datei
-- 🎭 Animationen mit Framer Motion
-- 🖼️ Optimierte Bildverwaltung
+### 🌟 Features
 
-## Schnellstart
+- **Moderne Technologie**: Next.js 14 mit App Router für schnelle Ladezeiten und SEO-Optimierung
+- **Responsives Design**: Perfekte Darstellung auf allen Geräten (Desktop, Tablet, Smartphone)
+- **Anpassbares Farbschema**: Leicht anpassbar über zentrale Tailwind-Konfiguration
+- **Branchen-optimierte Komponenten**: Spezialisierte Elemente für Handwerksbetriebe
+- **Mega-Menü Navigation**: Intuitive Benutzerführung mit visuell ansprechender Struktur
+- **Fortschrittliche Formulare**: Mehrstufige Anfrage-Formulare und interaktiver Kostenrechner
+- **100% SEO-optimiert**: Strukturierte Daten, Meta-Tags und optimierte Ladezeiten
+- **Einfach anpassbar**: Zentralisierte Konfiguration ohne tiefe Entwicklerkenntnisse
 
-### Installation
+## 📦 Verfügbare Versionen
+
+### Standard-Version (€49)
+- Responsive Design
+- Standard-Navigation
+- Kontaktformular
+- 3 Farbvarianten
+- Leistungsseiten
+
+### Premium-Version (€129) - Empfohlen
+- Alles aus Standard
+- Mega-Menü Navigation
+- Multistep Anfrage-Formular
+- Kostenrechner
+- 6 Farbvarianten
+- Premium Support (3 Monate)
+
+### Enterprise-Version (€299)
+- Alles aus Premium
+- Buchungssystem
+- CRM Integration
+- Lead-Management
+- 12 Farbvarianten
+- Premium Support (12 Monate)
+- Individuelle Anpassungen
+
+## 🔧 Schnellstart
+
+Folgen Sie diesen Schritten nach dem Erwerb des Templates:
 
 ```bash
 # Repository klonen
-git clone https://github.com/user/dachdecker-template.git mein-projekt
+git clone https://github.com/your-username/dachdecker-template.git
 
-# In das Verzeichnis wechseln
-cd mein-projekt
+# In das Projektverzeichnis wechseln
+cd dachdecker-template
 
 # Abhängigkeiten installieren
 npm install
@@ -34,91 +61,75 @@ npm install
 npm run dev
 ```
 
-Die Anwendung läuft dann unter [http://localhost:3000](http://localhost:3000).
+Öffnen Sie [http://localhost:3000](http://localhost:3000) in Ihrem Browser, um die Website zu sehen.
 
-### Konfiguration
+## ⚙️ Konfiguration
 
-Die wichtigsten Einstellungen können in der zentralen Konfigurationsdatei angepasst werden:
+Die zentrale Konfigurationsdatei befindet sich unter `src/lib/config.ts`. Hier können Sie alle wichtigen Einstellungen anpassen:
 
-```typescript
-// src/lib/config.ts
-export const siteConfig = {
-  siteName: 'Ihre Firma',
-  siteUrl: 'https://ihre-domain.de',
-  contact: {
-    email: 'info@ihre-domain.de',
-    phone: '01234 / 56789',
-    // ...
-  },
-  // ...
-}
-```
+- Firmeninformationen und Kontaktdaten
+- Farbschema und Design-Optionen
+- Navigationsstruktur
+- SEO-Einstellungen
+- Feature-Toggles
 
-### Farbschema anpassen
+## 🎨 Design-Anpassung
 
-Die Hauptfarben des Templates sind in der `tailwind.config.js` definiert:
+### Farbschema
+
+Passen Sie das Farbschema an Ihre Marke an, indem Sie die `tailwind.config.js` Datei bearbeiten:
 
 ```js
-// tailwind.config.js
 module.exports = {
-  // ...
   theme: {
     extend: {
       colors: {
         primary: {
-          500: '#f97316', // Hauptfarbe
-          // ...
+          DEFAULT: '#FF5500', // Ihre Hauptfarbe
+          dark: '#CC4400',    // Dunklere Variante
+          light: '#FF7733',   // Hellere Variante
         },
-        // ...
-      }
-    }
-  }
+        // Weitere Farben...
+      },
+    },
+  },
+  // ...rest of config
 }
 ```
 
-## Seitenstruktur
+## 📱 Integrierte Seiten
 
-Das Template enthält folgende Seiten:
+- **Homepage**: Präsentation Ihrer Dienstleistungen mit Call-to-Actions
+- **Leistungsübersicht**: Detaillierte Darstellung Ihrer Angebote
+- **Leistungsdetails**: Tiefergehende Informationen zu einzelnen Diensten
+- **Über uns**: Unternehmensvorstellung mit Team-Sektion
+- **Kontakt**: Kontaktformular mit Karte und Kontaktdaten
+- **Formulare**: Kostenrechner und mehrstufige Anfrage-Formulare (Premium)
 
-- ✅ Startseite
-- ✅ Leistungsübersicht
-- ✅ Leistungsdetails
-- ✅ Über uns
-- ✅ Kontakt
-- ✅ Impressum/Datenschutz (Platzhalter)
+## 📚 Dokumentation
 
-## Komponenten
+Umfangreiche Dokumentation finden Sie im `/docs` Verzeichnis:
 
-Das Template enthält spezialisierte Komponenten für Handwerksunternehmen:
+- Anpassungsanleitung
+- Komponenten-Übersicht
+- SEO-Empfehlungen
+- Hosting-Anleitung
+- Performance-Optimierung
 
-- `Header` - Mit oder ohne Mega-Menü
-- `Services` - Diensteübersicht mit Filterfunktion
-- `Testimonials` - Kundenbewertungen
-- `ContactForm` - Kontaktformular
-- `Gallery` - Bildergalerie für Referenzprojekte
-- `TeamMembers` - Team-Vorstellung
-- `CTASection` - Call-to-Action-Bereiche
-- `ServiceProcess` - Prozessvisualisierung
-- und viele mehr...
+## 💬 Support & Updates
 
-## Anpassungen
+- **Standard-Version**: Community-Support
+- **Premium-Version**: E-Mail-Support für 3 Monate, Updates für 6 Monate
+- **Enterprise-Version**: Prioritäts-Support für 12 Monate, Updates für 24 Monate
 
-### Bilder
+## 📄 Lizenz
 
-Ersetzen Sie die Beispielbilder im Verzeichnis `public/images/` mit Ihren eigenen. Achten Sie darauf, dass die Dateinamen identisch sind oder passen Sie die Bildpfade in den entsprechenden Komponenten an.
+Dieses Template ist urheberrechtlich geschützt. Nach dem Kauf erhalten Sie eine nicht-exklusive Lizenz zur Verwendung des Templates für eine einzelne Website. Das Template darf nicht weiterverkauft oder weitergegeben werden.
 
-### Inhalte
+## 🛒 Kaufen
 
-Die meisten Inhalte können über die Konfigurationsdateien oder Komponenten-Props angepasst werden. Für umfangreichere Änderungen können Sie die entsprechenden Komponenten in `src/components/` anpassen.
+Besuchen Sie unsere [Website](https://example.com) oder kontaktieren Sie uns unter sales@example.com, um das Template zu erwerben.
 
-### Meta-Tags und SEO
+---
 
-Die SEO-Konfiguration befindet sich in `src/lib/config.ts` und wird für die Generierung von Meta-Tags verwendet.
-
-## Support
-
-Bei Fragen oder Problemen eröffnen Sie bitte ein Issue auf GitHub oder kontaktieren Sie uns unter support@ihre-domain.de.
-
-## Lizenz
-
-Dieses Template ist urheberrechtlich geschützt und darf nicht weitergegeben oder verkauft werden. Weitere Informationen finden Sie in der LICENSE-Datei. 
+© 2025 Dachdecker-Template. Alle Rechte vorbehalten. 
