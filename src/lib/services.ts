@@ -14,9 +14,9 @@ interface Service {
 export const services: Service[] = [
   {
     title: "Flachdacharbeiten",
-    slug: "flachdacharbeiten",
+    slug: "flachdach",
     description: "Professionelle Verlegung und Reparatur von Flachdächern mit modernsten Materialien.",
-    image: "/hero-roof.jpg",
+    image: "/images/services/flachdach.svg",
     details: [
       {
         title: "Abdichtung",
@@ -30,9 +30,9 @@ export const services: Service[] = [
   },
   {
     title: "Steildacharbeiten",
-    slug: "steildacharbeiten",
+    slug: "steildach",
     description: "Fachgerechte Eindeckung und Sanierung von Steildächern.",
-    image: "/hero-roof.jpg",
+    image: "/images/services/steildach.svg",
     details: [
       {
         title: "Dacheindeckung",
@@ -46,9 +46,9 @@ export const services: Service[] = [
   },
   {
     title: "Klempnerarbeiten",
-    slug: "klempnerarbeiten",
+    slug: "klempner",
     description: "Montage und Wartung von Dachentwässerungssystemen.",
-    image: "/hero-roof.jpg",
+    image: "/images/services/klempner.svg",
     details: [
       {
         title: "Dachentwässerung",
@@ -62,9 +62,9 @@ export const services: Service[] = [
   },
   {
     title: "Dachsanierung",
-    slug: "dachsanierung",
+    slug: "sanierung",
     description: "Umfassende Sanierung und Modernisierung bestehender Dachkonstruktionen.",
-    image: "/hero-roof.jpg",
+    image: "/images/services/sanierung.svg",
     details: [
       {
         title: "Komplettsanierung",
@@ -78,9 +78,9 @@ export const services: Service[] = [
   },
   {
     title: "Dachbegrünung",
-    slug: "dachbegruenung",
+    slug: "begruenung",
     description: "Professionelle Planung und Ausführung von Gründachprojekten.",
-    image: "/hero-roof.jpg",
+    image: "/images/services/begruenung.svg",
     details: [
       {
         title: "Extensive Begrünung",
@@ -94,9 +94,9 @@ export const services: Service[] = [
   },
   {
     title: "Notfallservice",
-    slug: "notfallservice",
+    slug: "notfall",
     description: "24/7 Notdienst bei Sturmschäden und Wassereinbrüchen.",
-    image: "/hero-roof.jpg",
+    image: "/images/services/notfall.svg",
     details: [
       {
         title: "Sturmschäden",

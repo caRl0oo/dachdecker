@@ -15,7 +15,7 @@ export default function ServicesPage() {
       <section className="relative h-[300px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/services/hero.jpg"
+            src="/images/hero.svg"
             alt="Unsere Leistungen"
             fill
             className="object-cover"
