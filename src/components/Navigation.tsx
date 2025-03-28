@@ -89,21 +89,23 @@ export default function Navigation() {
         isScrolled || isOpen ? 'bg-white shadow-lg' : 'bg-white/80 backdrop-blur-sm'
       }`}>
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/images/logo.svg"
-                alt="Dachdecker München"
-                width={200}
-                height={60}
-                className="w-auto h-10"
-                priority
-              />
-            </Link>
+          <div className="flex items-center justify-between h-28">
+            {/* Logo - Centered on smaller screens */}
+            <div className="flex-1 flex justify-center lg:justify-start">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/logo-transparent.png"
+                  alt="Dachdecker München"
+                  width={400}
+                  height={120}
+                  className="w-auto h-28"
+                  priority
+                />
+              </Link>
+            </div>
 
             {/* Desktop Menu */}
-            <div className="hidden lg:flex items-center space-x-8">
+            <div className="hidden lg:flex flex-1 items-center justify-end space-x-8">
               {menuItems.map((item) => (
                 <div 
                   key={item.name}
@@ -137,8 +139,8 @@ export default function Navigation() {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
-            <div className="lg:hidden">
+            {/* Mobile Menu Button - Aligned to the right */}
+            <div className="lg:hidden flex justify-end">
               <button
                 onClick={() => setIsOpen(!isOpen)}
                 className="p-2 rounded-md text-gray-600 hover:text-primary hover:bg-gray-100"
@@ -335,8 +337,8 @@ export default function Navigation() {
         )}
       </AnimatePresence>
 
-      {/* Add a spacer to prevent content from being hidden under the fixed navbar */}
-      <div className="h-20"></div>
+      {/* Adjust spacer height to match new navbar height */}
+      <div className="h-28"></div>
     </>
   )
 } 

@@ -16,7 +16,7 @@ export const services: Service[] = [
     title: "Flachdacharbeiten",
     slug: "flachdach",
     description: "Professionelle Verlegung und Reparatur von Flachdächern mit modernsten Materialien.",
-    image: "/images/services/flachdach.svg",
+    image: "/images/flachdach.jpg",
     details: [
       {
         title: "Abdichtung",
@@ -32,7 +32,7 @@ export const services: Service[] = [
     title: "Steildacharbeiten",
     slug: "steildach",
     description: "Fachgerechte Eindeckung und Sanierung von Steildächern.",
-    image: "/images/services/steildach.svg",
+    image: "/images/steildach.jpg",
     details: [
       {
         title: "Dacheindeckung",
@@ -48,7 +48,7 @@ export const services: Service[] = [
     title: "Klempnerarbeiten",
     slug: "klempner",
     description: "Montage und Wartung von Dachentwässerungssystemen.",
-    image: "/images/services/klempner.svg",
+    image: "/images/klempner.jpg",
     details: [
       {
         title: "Dachentwässerung",
@@ -64,7 +64,7 @@ export const services: Service[] = [
     title: "Dachsanierung",
     slug: "sanierung",
     description: "Umfassende Sanierung und Modernisierung bestehender Dachkonstruktionen.",
-    image: "/images/services/sanierung.svg",
+    image: "/images/dachsanierung.jpg",
     details: [
       {
         title: "Komplettsanierung",
@@ -80,7 +80,7 @@ export const services: Service[] = [
     title: "Dachbegrünung",
     slug: "begruenung",
     description: "Professionelle Planung und Ausführung von Gründachprojekten.",
-    image: "/images/services/begruenung.svg",
+    image: "/images/dachbegruenung.jpg",
     details: [
       {
         title: "Extensive Begrünung",
@@ -96,7 +96,7 @@ export const services: Service[] = [
     title: "Notfallservice",
     slug: "notfall",
     description: "24/7 Notdienst bei Sturmschäden und Wassereinbrüchen.",
-    image: "/images/services/notfall.svg",
+    image: "/images/notfallservice.jpg",
     details: [
       {
         title: "Sturmschäden",
